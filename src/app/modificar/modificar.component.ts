@@ -17,13 +17,7 @@ export class ModificarComponent {
   nivel: nivel;
   accion="Modificar curso"
 constructor(public activatedRoute: ActivatedRoute, public miServicio:ServicioCursosService,private router:Router){
-  this.activatedRoute.params.subscribe(data=>{
-    this.id=data['id'];
-    this.nombre=this.miServicio.listaCursos[this.id -1]._nombre
-    this.duracion=this.miServicio.listaCursos[this.id -1]._duracion
-    this.nivel=this.miServicio.listaCursos[this.id -1]._nivel
-
-  })
+  
   // this.id = this.activatedRoute.snapshot.params["id"]
   if(this.id==undefined){
     this.hayID=false
@@ -31,7 +25,15 @@ constructor(public activatedRoute: ActivatedRoute, public miServicio:ServicioCur
   }
 }
 ngOnInit(){
-  
+  //data es el flujo de datos de parámetros, s epuede llamar de otra forma
+  this.activatedRoute.params.subscribe(data=>{
+    
+    this.id=data['id'];
+    this.nombre=this.miServicio.listaCursos[this.id -1]._nombre
+    this.duracion=this.miServicio.listaCursos[this.id -1]._duracion
+    this.nivel=this.miServicio.listaCursos[this.id -1]._nivel
+
+  })
 }
 
 actualizaCurso(){
