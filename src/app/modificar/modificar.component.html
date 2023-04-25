@@ -1,0 +1,20 @@
+<h2>Modificar curso</h2>
+<br>
+ID: <input type="number" [(ngModel)]="id" disabled={{hayID}}>
+<br>
+Nombre: <input type="text" [(ngModel)]="nombre">
+<br>
+Duracion: <input type="number" [(ngModel)]="duracion">
+<br>
+Nivel: <select name="nivel" [(ngModel)]="nivel">
+    <option value="iniciacion">Iniciacion</option>
+    <option value="intermedio">Intermedio</option>
+    <option value="avanzado">Avanzado</option>
+</select>
+<br>
+<div *ngIf="hayID">
+    <button (click)="actualizaCurso()" class="btn btn-success">{{accion}}</button>
+</div>
+<div *ngIf="!hayID">
+    <button (click)="altaCurso()" class="btn btn-success">{{accion}}</button>
+</div>
