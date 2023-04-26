@@ -18,14 +18,16 @@ export class ModificarComponent {
   accion="Modificar curso"
 constructor(public activatedRoute: ActivatedRoute, public miServicio:ServicioCursosService,private router:Router){
   
-  // this.id = this.activatedRoute.snapshot.params["id"]
+  
   if(this.id==undefined){
     this.hayID=false
     this.accion="Agregar curso"
   }
 }
 ngOnInit(){
+  // this.id = this.activatedRoute.snapshot.params["id"]
   //data es el flujo de datos de parámetros, s epuede llamar de otra forma
+  
   this.activatedRoute.params.subscribe(data=>{
     
     this.id=data['id'];

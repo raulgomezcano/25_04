@@ -15,6 +15,6 @@ Nivel: <select name="nivel" [(ngModel)]="nivel">
 <div *ngIf="hayID">
     <button (click)="actualizaCurso()" class="btn btn-success">{{accion}}</button>
 </div>
-<div *ngIf="hayID">
-    <button (click)="actualizaCurso()" class="btn btn-success">{{accion}}</button>
+<div *ngIf="!hayID">
+    <button (click)="altaCurso()" class="btn btn-success">{{accion}}</button>
 </div>
